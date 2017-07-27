@@ -13,11 +13,13 @@ void display()
 	glColor3f(1.0, 1.0, 0.0);
 
 	glBegin(GL_LINES);
+		//Draw vertical lines between y0 and ymax for varying x values
 		for(int x = x0; x <= xmax; x += dx)
 		{
 			glVertex2f(x, y0);
 			glVertex2f(x, ymax);
 		}
+		//Draw horizontal lines between x0 and xmax for varying y values
 		for(int y = y0; y <= ymax; y += dy)
 		{
 			glVertex2f(x0, y);
