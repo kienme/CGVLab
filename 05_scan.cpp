@@ -12,12 +12,17 @@ float x4 = 300, y4 = 300;
 
 void detectEdge(float x1, float y1, float x2, float y2)
 {
+	//Update edge arrays for given points
+
+	//Make sure first point is below second
 	if(y1 > y2)
-	{ 
+	{
+		//Swap x1 with x2, and y1 with y2
 		float temp=x1; x1=x2; x2=temp; 
 		temp=y1; y1=y2; y2=temp; 
 	}
 
+	//Increment in x
 	float mx = (x2 - x1);
 	if(y1 != y2)
 		mx /= (y2 - y1);
@@ -39,6 +44,7 @@ void display()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	//Initialize left and right edge arrays
 	for(int i = 0; i < 500; ++i)
 	{
 		le[i] = 500;
